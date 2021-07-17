@@ -1,0 +1,1 @@
+System.register(["./vendor-legacy.fe0576e9.js"],(function(e){"use strict";var t;return{setters:[function(e){t=e.i}],execute:function(){e("P",(function(){const e=t();return{playSong:t=>{e.dispatch("player/addSong",t)}}}))}}}));

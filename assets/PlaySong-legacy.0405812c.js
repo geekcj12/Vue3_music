@@ -1,1 +1,0 @@
-System.register(["./vendor-legacy.5952c760.js"],(function(t){"use strict";var e;return{setters:[function(t){e=t.i}],execute:function(){t("P",(function(){const t=e();return{playSong:e=>{t.dispatch("player/addSong",e)}}}))}}}));
