@@ -43,6 +43,7 @@ export default {
       currentTime,
       (newVal, oldVal) => {
         if (!lrcArray.value.length) {
+          currentLrc.value = '无歌词';
           return;
         }
         
