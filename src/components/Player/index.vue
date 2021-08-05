@@ -66,7 +66,6 @@ export default {
     const totalTime = ref(0);
 
     const song = computed(() => store.state.player.current);
-    // const playListLength = computed(() => store.getters['player/playListLength']);
     const disabled = computed(() => Object.keys(song.value).length === 0);
 
     let audio = null;
@@ -144,8 +143,6 @@ export default {
       } else {
         audio.pause();
       }
-
-      playing.value = !playing.value;
     };
 
     const changeTime = (data) => {

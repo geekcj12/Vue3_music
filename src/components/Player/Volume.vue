@@ -25,7 +25,7 @@ export default {
     const { modelValue } = toRefs(props);
     const { emit } = context;
     const volumeBar = ref(null);
-    let lastVolumeValue = ref(modelValue.value);
+    const lastVolumeValue = ref(modelValue.value);
     const isMute = computed(() => modelValue.value === 0);
 
     const updateValue = (value) => {
