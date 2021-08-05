@@ -1,0 +1,1 @@
+System.register(["./index-legacy.738fde4e.js"],(function(e){"use strict";var t;return{setters:[function(e){t=e.s}],execute:function(){e("g",(e=>t.get("/playlist/detail",{params:{id:e}}))),e("a",(e=>t.get("/dj/program/detail",{params:{id:e}})))}}}));
