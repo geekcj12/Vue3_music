@@ -1,0 +1,17 @@
+{
+  "short_name": "冈另云音乐",
+  "name": "冈另云音乐",
+  "description": "一个音乐播放器",
+  "icons": [
+    {
+      "src": "icon144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }
+  ],
+  "display": "standalone",
+  "start_url": ".",
+  "theme_color": "#64b5f6",
+  "background_color": "#ffffff",
+  "orientation": "portrait-primary"
+}
