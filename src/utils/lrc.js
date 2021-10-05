@@ -10,16 +10,17 @@ export const parse = lrcString => {
 
   let lrcArray = lrcString.split('\n');
   let lrcResult = [];
+  const lrcTimePattern = new RegExp('\\[(\\d{2}):(\\d{2})\\.((\\d{2,3}))\\]', 'g');
   
   for (let i = 0; i < lrcArray.length; i++) {
     if (!lrcArray[i]) {
       break;
     }
-    const lrcText = lrcArray[i].match(/(?<=\]).*/g)[0];
+    const lrcText = lrcArray[i].replace(lrcTimePattern, '');
     if (!lrcText) {
       continue;
     }
-    let lrcTime = lrcArray[i].match(/(?<=\[)(\d{2}):(\d{2})\.((\d{2,3}))?(?=\])/g)[0];
+    let lrcTime = lrcArray[i].match(new RegExp(lrcTimePattern, 'g'))[0];
     lrcTime = handleLrcTime(lrcTime);
     lrcResult.push([lrcTime, lrcText]);
   }
@@ -33,8 +34,8 @@ export const parse = lrcString => {
  * @returns {number}
  */
 const handleLrcTime = timeString => {
-  const minute = timeString.match(/\w{2}(?=\:)/g);
-  const second = timeString.match(/(?<=\:)\w{2}(?=\.)/g);
-  const millisecond = timeString.match(/(?<=\.)\d*/g);
+  const minute = timeString.match(new RegExp('\\w{2}(?=\:)', 'g'));
+  const second = timeString.match(new RegExp('\\w{2}(?=\\.)', 'g'));
+  const millisecond = timeString.match(new RegExp('\\d{3}', 'g'));
   return parseInt(minute) * 60 + parseInt(second) + parseFloat(millisecond) / 1000;
 };
