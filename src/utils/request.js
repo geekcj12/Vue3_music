@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const service = axios.create({
-  baseURL: 'https://www.hsslive.cn/xcx/',
+  baseURL: 'https://neteaseapi.nishinonanase.moe',
   timeout: 5000,
   headers: {
     'content-type': 'application-json'
