@@ -36,6 +36,6 @@ export const parse = lrcString => {
 const handleLrcTime = timeString => {
   const minute = timeString.match(new RegExp('\\w{2}(?=\:)', 'g'));
   const second = timeString.match(new RegExp('\\w{2}(?=\\.)', 'g'));
-  const millisecond = timeString.match(new RegExp('\\d{3}', 'g'));
+  const millisecond = timeString.split('.')[1];
   return parseInt(minute) * 60 + parseInt(second) + parseFloat(millisecond) / 1000;
 };
